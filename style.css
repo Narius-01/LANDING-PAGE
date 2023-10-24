@@ -27,11 +27,40 @@
     display: inline-block;
       
 }
+.navbar__bars{
+    margin-left: auto;
+    /* padding: 20px; */
+    cursor: pointer;
+}
+.bar1, .bar2, .bar3 {
+    width: 20px;
+    border-bottom: 2px solid white;
+    margin-top: 3px;
+    transition: 0.4s;
+}
+.change .bar1 {
+    transform: translate(0, 5px) rotate(-45deg);
+}
+.change .bar2 {
+    opacity: 0;
+}
+.change .bar3 {
+    transform: translate(0, -5px) rotate(45deg);
+}
 .navbar__brand {
     text-decoration: none;
     color: white;
     font-size: 20px;
     padding: 14px 17px;
+}
+
+.bars {
+    display: none;
+}
+.navbar__list .responsive a {
+    float: none;
+    display: block;
+    text-align: right;
 }
 /* .navbar__item:not(:last-child) {
     margin-right: 10px;
@@ -52,4 +81,82 @@
 }
 .main {
     background-image: url();
+}
+
+.mainform {
+    margin-inline: auto;
+    width: 80%;
+    margin-block-start: 30px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 30px;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+input[type=submit] {
+    background-color: #04aa6d;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type=text]:focus, select:focus, textarea:focus {
+    outline: none;
+    border-bottom: 4px solid #04aa6d;
+    border-inline: none;
+    border-block-start: none;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }   
+
+}
+@media screen and (max-width: 768px) {
+    .navbar__link {
+        display: none;
+    }
+    .bars {
+        display: block;
+    }
+    .navbar__bars {
+        padding: 20px
+    }
+
 }
